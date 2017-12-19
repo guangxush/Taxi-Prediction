@@ -1,0 +1,9 @@
+*.txt
+.idea/
+raw_data/raw_gps
+ 
+/data
+
+*.ipynb
+.ipynb_checkpoints/
+*.pyc
