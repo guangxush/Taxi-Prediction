@@ -20,15 +20,18 @@ def load_data_v1(data_path):
     nb_epoch = 100
     batch_size = 2048
 
+    #读取训练集数据
     attr_name = ['taxiID', 'point', 'direction', 'time', 'duration', 'distance']
     train = pd.read_csv(os.path.join(data_path, 'train.txt'), header=None)
     train_set = train.values[:, [0, 1, 2, 3, 4, 5, 6]]
     print(train_set[0])
 
+    #读取验证集数据
     test = pd.read_csv(os.path.join(data_path, 'test.txt'), header=None)
     test_set = test.values[:, [0, 1, 2, 3, 4, 5, 6]]
     print(test_set[0])
 
+    #训练集数据
     dataset = train.values[:, [0, 1, 2, 3, 4, 5]]
     samples = list()
     for sample in dataset:
@@ -81,6 +84,7 @@ def load_data_v1(data_path):
     y_test = np_utils.to_categorical(y_test, nb_classes)
     print(y_train.shape)
     print(y_test.shape)
+    return X_train, X_test, y_train, y_test
 
 if __name__ == '__main__':
     load_data_v1(data_path='../data')
