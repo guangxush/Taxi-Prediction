@@ -1,7 +1,6 @@
 *.txt
 .idea/
 raw_data/raw_gps
-/test
 /data
 /map_match/map.txt
 /map_match/gps
